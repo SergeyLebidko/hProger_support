@@ -1,9 +1,11 @@
 import json
 
-PATH = r'C:\Users\User\PycharmProjects\hungry_proger\public\content\\'
+PATH = r'C:\Users\User\PycharmProjects\hungry_proger\src\\'
+OUTPUT_FILE = 'content.js'
 GIT_URL = 'https://github.com/SergeyLebidko/'
 
 
+# Функция для чтения файлов-исходников
 def read_content(filename):
     with open(filename, encoding='utf-8') as file:
         paragraph_list = []
@@ -13,17 +15,27 @@ def read_content(filename):
     return paragraph_list
 
 
-def save_data(data, filename):
-    with open(PATH + filename + '.txt', 'wt', encoding='utf-8') as file:
-        file.write(json.dumps(data, ensure_ascii=False))
+# Функция для записи данных в целевой каталог
+def save_data(data):
+    with open(PATH + OUTPUT_FILE, 'wt', encoding='utf-8') as file:
+        for number, element in enumerate(data):
+            if number:
+                file.write('\n\n')
+            file.write(f'export const {element["literal"]} = ' + json.dumps(element['data'], indent=2, sort_keys=False,
+                                                                            ensure_ascii=False))
 
 
-# Создаем файл "Обо мне"
+to_write_data = []
+
+# Готовим данные для раздела "Обо мне"
 header = read_content('about_me_header.txt')
 body = read_content('about_me_body.txt')
-save_data({'header': header, 'body': body}, 'about_me')
+to_write_data.append({
+    'literal': 'aboutMe',
+    'data': {'header': header, 'body': body}
+})
 
-# Создаем файл с перечнем проектов
+# Готовим данные для раздела с перечнем проектов
 projects_data = [
     (
         'Abalone',
@@ -53,7 +65,7 @@ projects_data = [
         'hungry_proger',
         'hProger',
         'Сайт, на котором вы сейчас находитесь. Можете кликнуть на логотип github\'a в углу карточки и посмотреть его исходный код :)',
-        ('React', 'paper.js', 'Axios', 'CSS', 'SCSS')
+        ('React', 'paper.js', 'CSS', 'SCSS')
     ),
     (
         'PyChess',
@@ -83,12 +95,17 @@ for git_name, title, description, tech_list in projects_data:
         'description': description,
         'tech_list': tech_list
     })
-
-save_data(data_list, 'projects')
+to_write_data.append({
+    'literal': 'projects',
+    'data': data_list
+})
 
 # Готовим данные о скиллах
 data_list = ['Python', 'Django', 'JavaScript', 'jQuery', 'React', 'HTML', 'CSS']
-save_data(data_list, 'skills')
+to_write_data.append({
+    'literal': 'skills',
+    'data': data_list
+})
 
 # Готовим данные о контактах
 contacts_data = [
@@ -104,10 +121,18 @@ for url, logo in contacts_data:
         'url': url,
         'logo': logo + '.png'
     })
-
-save_data(data_list, 'contacts')
+to_write_data.append({
+    'literal': 'contacts',
+    'data': data_list
+})
 
 # Готовим подробные данные о скиллах
 header = read_content('skills_detail_header.txt')
 body = read_content('skills_detail_body.txt')
-save_data({'header': header, 'body': body}, 'skills_detail')
+to_write_data.append({
+    'literal': 'skillsDetail',
+    'data': {'header': header, 'body': body}
+})
+
+# Сбрасываем данные на диск
+save_data(to_write_data)
