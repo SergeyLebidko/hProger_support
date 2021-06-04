@@ -101,7 +101,7 @@ to_write_data.append({
 })
 
 # Готовим данные о скиллах
-data_list = ['Python', 'Django', 'JavaScript', 'jQuery', 'React', 'HTML', 'CSS']
+data_list = ['Python', 'Django', 'HTML', 'CSS', 'React']
 to_write_data.append({
     'literal': 'skills',
     'data': data_list
