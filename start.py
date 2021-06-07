@@ -74,10 +74,10 @@ projects_data = [
         ('Python', 'pygame')
     ),
     (
-        'ReactTraining',
-        'ReactTraining',
-        'Учебный проект, в котором я обкатывал навыки создания различных React-компонетов и работы с CSS',
-        ('Python', 'Django', 'React', 'CSS')
+        'LiteInventory',
+        'LiteInventory',
+        'Небольшой сервис для учета компьютерной и оргтехники',
+        ('Python', 'Django', 'DRF')
     ),
     (
         'WhiteLinen',
