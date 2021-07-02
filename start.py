@@ -80,6 +80,12 @@ projects_data = [
         ('Python', 'Django', 'DRF')
     ),
     (
+        'soccer_stat',
+        'Soccer Stat',
+        'Небольшой сервис для просмотра футбольной статистики, основанный на бесплатном API сайта www.football-data.org',
+        ('React', 'HTML', 'CSS')
+    ),
+    (
         'WhiteLinen',
         'WhiteLinen',
         'Проект простого сайта-визитки для небольшой дизайн-студии. Мой первый опыт в верстке лендинга',
