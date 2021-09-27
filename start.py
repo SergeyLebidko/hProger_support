@@ -1,6 +1,10 @@
 import json
+from sys import platform
 
 PATH = r'C:\Users\User\PycharmProjects\hungry_proger\src\\'
+if platform == 'linux':
+    PATH = r'/home/sergey/PycharmProjects/hungry_proger/src/'
+
 OUTPUT_FILE = 'content.js'
 GIT_URL = 'https://github.com/SergeyLebidko/'
 
@@ -90,6 +94,18 @@ projects_data = [
         'WhiteLinen',
         'Проект простого сайта-визитки для небольшой дизайн-студии. Мой первый опыт в верстке лендинга',
         ('HTML', 'CSS', 'jQuery')
+    ),
+    (
+        'need_for_drive',
+        'Need for drive',
+        'Сайт для сервиса каршеринга, разработанный в рамках практикума в компании SimbirSoft',
+        ('React', 'Redux', 'React Router')
+    ),
+    (
+        'need_for_drive_admin',
+        'NFD Admin',
+        'Административная панель для сервиса каршеринга, разработанная в рамках практикума в компании SimbirSoft',
+        ('React', 'Redux', 'React Router')
     )
 ]
 
