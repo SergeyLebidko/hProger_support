@@ -1,160 +1,103 @@
 import json
 from sys import platform
 
-PATH = r'C:\Users\User\PycharmProjects\hungry_proger\src\\'
+PATH = r'C:\Users\User\PycharmProjects\hungry_proger\src\content\\'
 if platform == 'linux':
-    PATH = r'/home/sergey/PycharmProjects/hungry_proger/src/'
+    PATH = r'/home/sergey/PycharmProjects/hungry_proger/src/content/'
 
-OUTPUT_FILE = 'content.js'
-GIT_URL = 'https://github.com/SergeyLebidko/'
+OUTPUT_FILE = 'data.json'
 
+# Данные для раздела с перечнем скиллов
+skills_data = [
+    {
+        'title': 'JavaScript',
+        'tech': ('React', 'Redux', 'Thunk', 'React Router', 'jQuery')
+    },
+    {
+        'title': 'Python',
+        'tech': ('Django', 'Django Rest Framework', 'pygame')
+    },
+    {
+        'title': 'HTML/CSS',
+        'tech': ('Семантическая верстка', 'Технология БЭМ', 'SCSS', 'Flexbox-верстка')
+    }
+]
 
-# Функция для чтения файлов-исходников
-def read_content(filename):
-    with open(filename, encoding='utf-8') as file:
-        paragraph_list = []
-        for line in file.read().split('*'):
-            paragraph_list.append(line)
-
-    return paragraph_list
-
-
-# Функция для записи данных в целевой каталог
-def save_data(data):
-    with open(PATH + OUTPUT_FILE, 'wt', encoding='utf-8') as file:
-        for number, element in enumerate(data):
-            if number:
-                file.write('\n\n')
-            file.write(f'export const {element["literal"]} = ' + json.dumps(element['data'], indent=2, sort_keys=False,
-                                                                            ensure_ascii=False))
-
-
-to_write_data = []
-
-# Готовим данные для раздела "Обо мне"
-header = read_content('about_me_header.txt')
-body = read_content('about_me_body.txt')
-to_write_data.append({
-    'literal': 'aboutMe',
-    'data': {'header': header, 'body': body}
-})
-
-# Готовим данные для раздела с перечнем проектов
+# Данные для раздела с перечнем проектов
 projects_data = [
-    (
-        'Abalone',
-        'Abalone',
-        'Реализация настольной игры "Абалон", созданной французскими игровыми дизайнерами в 1987 году.',
-        ('Python', 'pygame')
-    ),
-    (
-        'graphite_client',
-        'Graphite',
-        'Платформа для ведения блогов. Мой первый проект, в котором фронтэнд написан полностью на React',
-        ('Python', 'Django', 'DRF', 'React', 'CSS')
-    ),
-    (
-        'MiniStorage',
-        'MiniStorage',
-        'Простая система ведения учета на небольшом складе с базовым набором возможностей',
-        ('DRF', 'JavaScript', 'jQuery', 'CSS', 'Python', 'Django')
-    ),
-    (
-        'Hexagon',
-        'Hexagon',
-        'Игра-пазл на поле из гексов',
-        ('Python', 'pygame')
-    ),
-    (
-        'hungry_proger',
-        'hProger',
-        'Сайт, на котором вы сейчас находитесь. Можете кликнуть на логотип github\'a в углу карточки и посмотреть его исходный код :)',
-        ('React', 'paper.js', 'CSS', 'SCSS')
-    ),
-    (
-        'PyChess',
-        'PyChess',
-        'Шахматы на Python. Один из первых моих проектов на этом языке',
-        ('Python', 'pygame')
-    ),
-    (
-        'LiteInventory',
-        'LiteInventory',
-        'Небольшой сервис для учета компьютерной и оргтехники',
-        ('Python', 'Django', 'DRF')
-    ),
-    (
-        'soccer_stat',
-        'Soccer Stat',
-        'Небольшой сервис для просмотра футбольной статистики, основанный на бесплатном API сайта www.football-data.org',
-        ('React', 'HTML', 'CSS')
-    ),
-    (
-        'WhiteLinen',
-        'WhiteLinen',
-        'Проект простого сайта-визитки для небольшой дизайн-студии. Мой первый опыт в верстке лендинга',
-        ('HTML', 'CSS', 'jQuery')
-    ),
-    (
-        'need_for_drive',
-        'Need for drive',
-        'Сайт для сервиса каршеринга, разработанный в рамках практикума в компании SimbirSoft',
-        ('React', 'Redux', 'React Router')
-    ),
-    (
-        'need_for_drive_admin',
-        'NFD Admin',
-        'Административная панель для сервиса каршеринга, разработанная в рамках практикума в компании SimbirSoft',
-        ('React', 'Redux', 'React Router')
-    )
+    {
+        'git': 'https://github.com/SergeyLebidko/Abalone',
+        'title': 'Abalone',
+        'description': 'Реализация настольной игры "Абалон", созданной французскими игровыми дизайнерами в 1987 году.',
+        'tech': ('Python', 'pygame')
+    },
+    {
+        'git': 'https://github.com/SergeyLebidko/graphite_client',
+        'title': 'Graphite',
+        'description': 'Платформа для ведения блогов. Мой первый проект, в котором фронтэнд написан полностью на React',
+        'tech': ('Python', 'Django', 'DRF', 'React', 'CSS')
+    },
+    {
+        'git': 'https://github.com/SergeyLebidko/MiniStorage',
+        'title': 'MiniStorage',
+        'description': 'Простая система ведения учета на небольшом складе с базовым набором возможностей',
+        'tech': ('DRF', 'JavaScript', 'jQuery', 'CSS', 'Python', 'Django')
+    },
+    {
+        'git': 'https://github.com/SergeyLebidko/Hexagon',
+        'title': 'Hexagon',
+        'description': 'Игра-пазл на поле из гексов',
+        'tech': ('Python', 'pygame')
+    },
+    {
+        'git': 'https://github.com/SergeyLebidko/hungry_proger',
+        'title': 'hProger',
+        'description': 'Сайт, на котором вы сейчас находитесь. Можете кликнуть на логотип github\'a в углу карточки и посмотреть его исходный код :)',
+        'tech': ('React', 'paper.js', 'CSS', 'SCSS')
+    },
+    {
+        'git': 'https://github.com/SergeyLebidko/PyChess',
+        'title': 'PyChess',
+        'description': 'Шахматы на Python. Один из первых моих проектов на этом языке',
+        'tech': ('Python', 'pygame')
+    },
+    {
+        'git': 'https://github.com/SergeyLebidko/LiteInventory',
+        'title': 'LiteInventory',
+        'description': 'Небольшой сервис для учета компьютерной и оргтехники',
+        'tech': ('Python', 'Django', 'DRF')
+    },
+    {
+        'git': 'https://github.com/SergeyLebidko/soccer_stat',
+        'title': 'Soccer Stat',
+        'description': 'Небольшой сервис для просмотра футбольной статистики, основанный на бесплатном API сайта www.football-data.org',
+        'tech': ('React', 'HTML', 'CSS')
+    },
+    {
+        'git': 'https://github.com/SergeyLebidko/need_for_drive',
+        'title': 'Need for drive',
+        'description': 'Сайт для сервиса каршеринга, разработанный в рамках практикума в компании SimbirSoft',
+        'tech': ('React', 'Redux', 'React Router')
+    },
+    {
+        'git': 'https://github.com/SergeyLebidko/need_for_drive_admin',
+        'title': 'NFD Admin',
+        'description': 'Административная панель для сервиса каршеринга, разработанная в рамках практикума в компании SimbirSoft',
+        'tech': ('React', 'Redux', 'React Router')
+    }
 ]
 
-data_list = []
-for git_name, title, description, tech_list in projects_data:
-    data_list.append({
-        'git': GIT_URL + git_name,
-        'title': title,
-        'description': description,
-        'tech_list': tech_list
-    })
-to_write_data.append({
-    'literal': 'projects',
-    'data': data_list
-})
 
-# Готовим данные о скиллах
-data_list = ['Python', 'Django', 'HTML', 'CSS', 'React']
-to_write_data.append({
-    'literal': 'skills',
-    'data': data_list
-})
+def main():
+    to_file = {
+        'skills': skills_data,
+        'projects': projects_data
+    }
+    with open(PATH + OUTPUT_FILE, 'wt') as output_file:
+        output_file.write(json.dumps(to_file, indent=2, sort_keys=False, ensure_ascii=False))
 
-# Готовим данные о контактах
-contacts_data = [
-    ('https://github.com/SergeyLebidko', 'git_logo'),
-    ('tg://resolve?domain=@sergeyler', 'telegram_logo'),
-    ('https://krasnodar.hh.ru/resume/7a068d12ff072536a70039ed1f514b58767550', 'hh_logo'),
-    ('mailto:sergeyler@gmail.com', 'email_logo')
-]
+    print('Запись завершена...')
 
-data_list = []
-for url, logo in contacts_data:
-    data_list.append({
-        'url': url,
-        'logo': logo + '.png'
-    })
-to_write_data.append({
-    'literal': 'contacts',
-    'data': data_list
-})
 
-# Готовим подробные данные о скиллах
-header = read_content('skills_detail_header.txt')
-body = read_content('skills_detail_body.txt')
-to_write_data.append({
-    'literal': 'skillsDetail',
-    'data': {'header': header, 'body': body}
-})
-
-# Сбрасываем данные на диск
-save_data(to_write_data)
+if __name__ == '__main__':
+    main()
