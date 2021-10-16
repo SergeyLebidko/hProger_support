@@ -26,9 +26,51 @@ skills_data = [
 # Данные для раздела с перечнем проектов
 projects_data = [
     {
+        'git': 'https://github.com/SergeyLebidko/hungry_proger',
+        'title': 'hProger',
+        'description': 'Сайт, на котором вы сейчас находитесь. Можете кликнуть на заголовок карточки и посмотреть его исходный код :)',
+        'tech': ('React', 'SCSS')
+    },
+    {
+        'git': 'https://github.com/SergeyLebidko/yandex_map_demo',
+        'title': 'Yandex-Map Demo',
+        'description': 'Небольшое демо компонентов для работы в Яндекс-картами',
+        'tech': ('JavaScript', 'React', 'SCSS')
+    },
+    {
+        'git': 'https://github.com/SergeyLebidko/clip_slider',
+        'title': 'Clip Slider',
+        'description': 'Слайдер на React с необычным, "ступенчатым", эффектом переключения',
+        'tech': ('React', 'SCSS')
+    },
+    {
+        'git': 'https://github.com/SergeyLebidko/soccer_stat',
+        'title': 'Soccer Stat',
+        'description': 'Небольшой сервис для просмотра футбольной статистики, основанный на бесплатном API сайта www.football-data.org',
+        'tech': ('React', 'HTML', 'CSS')
+    },
+    {
+        'git': 'https://github.com/SergeyLebidko/need_for_drive',
+        'title': 'Need for drive',
+        'description': 'Сайт для сервиса каршеринга, разработанный в рамках практикума в компании SimbirSoft',
+        'tech': ('React', 'Redux', 'Thunk', 'React Router')
+    },
+    {
+        'git': 'https://github.com/SergeyLebidko/need_for_drive_admin',
+        'title': 'NFD Admin',
+        'description': 'Административная панель для сервиса каршеринга, разработанная в рамках практикума в компании SimbirSoft',
+        'tech': ('React', 'Redux', 'Thunk', 'React Router')
+    },
+    {
+        'git': 'https://github.com/SergeyLebidko/LiteInventory',
+        'title': 'LiteInventory',
+        'description': 'Небольшой сервис для учета компьютерной и оргтехники',
+        'tech': ('Python', 'Django', 'DRF')
+    },
+    {
         'git': 'https://github.com/SergeyLebidko/Abalone',
         'title': 'Abalone',
-        'description': 'Реализация настольной игры "Абалон", созданной французскими игровыми дизайнерами в 1987 году.',
+        'description': 'Реализация настольной игры "Абалон", созданной в 1987 году французскими игровыми дизайнерами.',
         'tech': ('Python', 'pygame')
     },
     {
@@ -41,7 +83,7 @@ projects_data = [
         'git': 'https://github.com/SergeyLebidko/MiniStorage',
         'title': 'MiniStorage',
         'description': 'Простая система ведения учета на небольшом складе с базовым набором возможностей',
-        'tech': ('DRF', 'JavaScript', 'jQuery', 'CSS', 'Python', 'Django')
+        'tech': ('Python', 'Django', 'DRF', 'JavaScript', 'jQuery', 'CSS')
     },
     {
         'git': 'https://github.com/SergeyLebidko/Hexagon',
@@ -50,40 +92,28 @@ projects_data = [
         'tech': ('Python', 'pygame')
     },
     {
-        'git': 'https://github.com/SergeyLebidko/hungry_proger',
-        'title': 'hProger',
-        'description': 'Сайт, на котором вы сейчас находитесь. Можете кликнуть на логотип github\'a в углу карточки и посмотреть его исходный код :)',
-        'tech': ('React', 'paper.js', 'CSS', 'SCSS')
+        'git': 'https://github.com/SergeyLebidko/Pythonix',
+        'title': 'Pythonix',
+        'description': 'Клон игры Xonix на Python',
+        'tech': ('Python', 'pygame')
+    },
+    {
+        'git': 'https://github.com/SergeyLebidko/Mosaic',
+        'title': 'Mosaic',
+        'description': 'Простая игра-мозаика на Python',
+        'tech': ('Python', 'pygame')
+    },
+    {
+        'git': 'https://github.com/SergeyLebidko/Solitaire',
+        'title': 'Solitaire',
+        'description': 'Пасьянс "Косынка" на Python',
+        'tech': ('Python', 'pygame')
     },
     {
         'git': 'https://github.com/SergeyLebidko/PyChess',
         'title': 'PyChess',
         'description': 'Шахматы на Python. Один из первых моих проектов на этом языке',
         'tech': ('Python', 'pygame')
-    },
-    {
-        'git': 'https://github.com/SergeyLebidko/LiteInventory',
-        'title': 'LiteInventory',
-        'description': 'Небольшой сервис для учета компьютерной и оргтехники',
-        'tech': ('Python', 'Django', 'DRF')
-    },
-    {
-        'git': 'https://github.com/SergeyLebidko/soccer_stat',
-        'title': 'Soccer Stat',
-        'description': 'Небольшой сервис для просмотра футбольной статистики, основанный на бесплатном API сайта www.football-data.org',
-        'tech': ('React', 'HTML', 'CSS')
-    },
-    {
-        'git': 'https://github.com/SergeyLebidko/need_for_drive',
-        'title': 'Need for drive',
-        'description': 'Сайт для сервиса каршеринга, разработанный в рамках практикума в компании SimbirSoft',
-        'tech': ('React', 'Redux', 'React Router')
-    },
-    {
-        'git': 'https://github.com/SergeyLebidko/need_for_drive_admin',
-        'title': 'NFD Admin',
-        'description': 'Административная панель для сервиса каршеринга, разработанная в рамках практикума в компании SimbirSoft',
-        'tech': ('React', 'Redux', 'React Router')
     }
 ]
 
