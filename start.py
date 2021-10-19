@@ -11,7 +11,7 @@ OUTPUT_FILE = 'data.json'
 skills_data = [
     {
         'title': 'JavaScript',
-        'tech': ('React', 'Redux', 'Thunk', 'React Router', 'jQuery')
+        'tech': ('React', 'React Hooks', 'Redux', 'Thunk', 'React Router', 'jQuery')
     },
     {
         'title': 'Python',
