@@ -38,6 +38,12 @@ projects_data = [
         'tech': ('JavaScript', 'React', 'SCSS')
     },
     {
+        'git': 'https://github.com/SergeyLebidko/lookas',
+        'title': 'Lookas',
+        'description': 'Сайт-лэндинг для дизайнера-декоратора. Реализован нестандартный скроллинг ',
+        'tech': ('React', 'SCSS')
+    },
+    {
         'git': 'https://github.com/SergeyLebidko/clip_slider',
         'title': 'Clip Slider',
         'description': 'Слайдер на React с необычным, "ступенчатым", эффектом переключения',
