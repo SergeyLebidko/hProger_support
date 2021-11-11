@@ -32,16 +32,16 @@ projects_data = [
         'tech': ('React', 'SCSS')
     },
     {
-        'git': 'https://github.com/SergeyLebidko/yandex_map_demo',
-        'title': 'Yandex-Map Demo',
-        'description': 'Небольшое демо компонентов для работы в Яндекс-картами',
-        'tech': ('JavaScript', 'React', 'SCSS')
-    },
-    {
         'git': 'https://github.com/SergeyLebidko/lookas',
         'title': 'Lookas',
         'description': 'Сайт-лэндинг для дизайнера-декоратора. Реализован нестандартный скроллинг ',
         'tech': ('React', 'SCSS')
+    },
+    {
+        'git': 'https://github.com/SergeyLebidko/yandex_map_demo',
+        'title': 'Yandex-Map Demo',
+        'description': 'Небольшое демо компонентов для работы в Яндекс-картами',
+        'tech': ('JavaScript', 'React', 'SCSS')
     },
     {
         'git': 'https://github.com/SergeyLebidko/clip_slider',
